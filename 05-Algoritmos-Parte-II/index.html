@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Formulário</title>
+  <link rel="stylesheet" type="text/css" href="https://eco.adufertil.com.br:8104/style-guide/css/fluig-style-guide.min.css">
+  <script src="https://eco.adufertil.com.br:8104/portal/resources/js/jquery/jquery.js"></script>
+  <script src="https://eco.adufertil.com.br:8104/portal/resources/js/jquery/jquery-ui.min.js"></script>
+  <script src="https://eco.adufertil.com.br:8104/portal/resources/js/mustache/mustache-min.js"></script>
+  <script src="https://eco.adufertil.com.br:8104/style-guide/js/fluig-style-guide.min.js"></script>
+  <script>
+    function validarForm() {
+      // Validar campos obrigatórios
+      var data = document.getElementById("data").value;
+      if (data === "") {
+        alert("Por favor, preencha a data.");
+        return false;
+      }
+
+      var tonDia = document.getElementById("ton-dia").value;
+      if (tonDia === "") {
+        alert("Por favor, preencha a quantidade de toneladas por dia.");
+        return false;
+      }
+
+      // Validar campos percentuais
+      var camposPercentuais = ["ureia", "nitrato", "seca", "saco", "bag", "pallet", "granel"];
+      for (var i = 0; i < camposPercentuais.length; i++) {
+        var campo = document.getElementById(camposPercentuais[i]).value;
+        if (campo !== "") {
+          if (isNaN(campo) || campo < 0 || campo > 100) {
+            alert("Por favor, preencha um valor percentual válido para " + camposPercentuais[i] + ".");
+            return false;
+          }
+        }
+      }
+
+      // Todos os campos estão válidos
+      return true;
+    }
+  </script>
+</head>
+<body>
+  <h1>Formulário</h1>
+  <div class="fluig-style-guide">
+    <form onsubmit="return validarForm();">
+        <label for="data">Data:</label>
+        <input type="date" id="data" name="data"><br><br>
+
+        <label for="ureia">Ureia (%):</label>
+        <input type="text" id="ureia" name="ureia"><br><br>
+
+        <label for="nitrato">Nitrato (%):</label>
+        <input type="text" id="nitrato" name="nitrato"><br><br>
+
+        <label for="seca">Seca (%):</label>
+        <input type="text" id="seca" name="seca"><br><br>
+
+        <label for="saco">Saco (%):</label>
+        <input type="text" id="saco" name="saco"><br><br>
+
+        <label for="bag">Bag (%):</label>
+        <input type="text" id="bag" name="bag"><br><br>
+
+        <label for="pallet">Pallet (%):</label>
+        <input type="text" id="pallet" name="pallet"><br><br>
+
+        <label for="granel">Granel (%):</label>
+        <input type="text" id="granel" name="granel"><br><br>
+
+        <label for="ton-dia">Ton Dia:</label>
+        <input type="number" id="ton-dia" name="ton-dia"><br><br>
+
+        <input class="btn btn-default btn-lg active" type="submit" value="Enviar">
+    </form>
+  </div>
+</body>
+</html>

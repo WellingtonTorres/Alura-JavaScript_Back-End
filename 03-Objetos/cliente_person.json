@@ -1,0 +1,27 @@
+[
+    {
+        "id_cliente": "999999",
+        "id_lojacli": "01",
+        "num_orc": "123456",
+        "pedido_cli": "12345689000",
+        "pedido_protheus": "123456",
+        "item": "99",
+        "dt_fim": "20231230",
+        "produto": "123456789",
+        "qtd_solicitada": "10",
+        "dt_entrega": "20230505"
+    },
+    {
+        "id_cliente": "999999",
+        "id_lojacli": "01",
+        "num_orc": "123456",
+        "pedido_cli": "12345689000",
+        "pedido_protheus": "123456",
+        "item": "99",
+        "dt_fim": "20231230",
+        "produto": "987654321",
+        "qtd_solicitada": "10",
+        "dt_entrega": "20230505"
+    }
+
+]
